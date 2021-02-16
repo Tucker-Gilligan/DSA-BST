@@ -230,23 +230,6 @@ function createEZBST(myString) {
 createEZBST('EASYQUESTION');
 // console.dir(EZBST, { depth: null });
 
-// function displayTree(tree) {
-//   if (!tree) {
-//     return null;
-//   }
-//   if (tree.left) {
-//     console.log(tree.left.key, 'left');
-//     displayTree(tree.LEFT);
-//   }
-//   if (tree.right) {
-//     console.log(tree.right.key, 'right');
-//     displayTree(tree.right);
-//   }
-//   return;
-// }
-
-// displayTree(EZBST, 'EZBST DISPLAY FUNCTION');
-
 /*
 4.
 4. Without running this code in your code editor, 
@@ -317,12 +300,8 @@ console.log(findHeight(EZBST), 'EZBST height');
    Write an algorithm to check whether an 
    arbitrary binary tree is a binary search tree, 
    assuming the tree does not contain duplicates.
-
 =====Think this is working, but unsure how to test otherwise=====
-
    */
-
-//standard BST follows rules of L = lower R = higher
 
 //check if value @ tree.left.key is lower than tree.key
 //recursion
@@ -350,8 +329,9 @@ console.log(isItBST(EZBST), 'EZBST should be true');
    Write an algorithm to find the 3rd largest node in a binary search tree.
 */
 
-//move right twice
-
+//remove largest (largest)
+//remove largest (second largest)
+//return largest (third largest)
 function thirdLargestNode(tree) {
   tree.remove(tree._findMax().key);
   tree.remove(tree._findMax().key);
@@ -411,15 +391,7 @@ console.log(balancedBst(EZBST), 'EZBST balance check');
    identical or not without actually constructing the tree. 
    You may use another data structure such as an array or a linked list 
    but don't construct the BST. What is the time complexity of your algorithm? 
-   E.g., 
-   3, 5, 4, 6, 1, 0, 2 
-   and 
-   3, 1, 5, 2, 4, 6, 0 
-   are two sequences of arrays 
-   but will create the exact same BSTs and your program should return true.
 */
-
-//check if root node is the same
 
 function same(myArray1, myArray2) {
   //check if array lengths are the same
